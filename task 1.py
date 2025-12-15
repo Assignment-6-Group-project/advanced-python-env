@@ -1,0 +1,6 @@
+fullname = input("Your last name, first name? ")
+age = int(input("How old are you? "))
+phone = input("Your phone number? ")
+print(fullname.capitalize())
+print(age)
+print(phone)
