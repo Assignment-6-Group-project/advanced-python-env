@@ -1,0 +1,8 @@
+{% extends 'main/base.html' %}
+{% block title %}About Us{% endblock %}
+{% block content %}
+    <h2>About Our Blog</h2>
+    <p>This project was created as part of Assignment 8.</p>
+    <p>Current date: {% now "jS F Y" %}</p>
+    <a href="{% url 'post_list' %}">Back to Posts</a>
+{% endblock %}

@@ -23,5 +23,7 @@ urlpatterns = [
     path('', views.post_list, name='post_list'),
     path('post/<int:pk>/', views.post_detail, name='post_detail'),
     path('author/<str:username>/', views.posts_by_author, name='posts_by_author'),
-    path('api/posts/', views.api_posts, name='api_posts'),   
+    path('about/', views.about_view, name='about'),
+    path('api/posts/', views.api_posts, name='api_posts'),
+    path('api/posts/<int:pk>/', views.api_post_detail, name='api_post_detail'),
 ]
