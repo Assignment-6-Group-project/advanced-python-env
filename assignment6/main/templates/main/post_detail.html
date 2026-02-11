@@ -1,11 +1,61 @@
 {% extends 'main/base.html' %}
 
-{% block title %}{{ post.title }}{% endblock %}
-
 {% block content %}
-<h2>{{ post.title }}</h2>
-<p>{{ post.content }}</p>
-<p><b>Category:</b> {{ post.category.name }}</p>
-<p><b>Author:</b> {{ post.author.username }}</p>
-<p><b>Created:</b> {{ post.created_at }}</p>
+<style>
+    .post-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 30px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        border-left: 6px solid #007bff;
+    }
+    .post-title {
+        font-size: 2.5rem;
+        color: #2c3e50;
+        margin-bottom: 15px;
+        font-weight: 800;
+    }
+    .post-meta {
+        font-size: 0.95rem;
+        color: #6c757d;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eee;
+    }
+    .post-meta span {
+        margin-right: 15px;
+    }
+    .post-content {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: #444;
+        margin-bottom: 30px;
+    }
+    .badge-category {
+        background: #e7f1ff;
+        color: #007bff;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-weight: 600;
+    }
+</style>
+
+<div class="post-container">
+    <h1 class="post-title">{{ post.title }}</h1>
+    
+    <div class="post-meta">
+        <span><i class="fas fa-user"></i> <strong>Author:</strong> {{ post.author }}</span>
+        <span><i class="fas fa-tag"></i> <strong>Category:</strong> <span class="badge-category">{{ post.category }}</span></span>
+        <br>
+        <span><i class="fas fa-calendar"></i> <strong>Created:</strong> {{ post.created_at|date:"M d, Y, g:i a" }}</span>
+    </div>
+
+    <div class="post-content">
+        {{ post.content|linebreaks }}
+    </div>
+
+    <a href="{% url 'post_list' %}" class="btn btn-outline-primary">← Back to Feed</a>
+</div>
 {% endblock %}
