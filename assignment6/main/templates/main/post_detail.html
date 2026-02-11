@@ -26,6 +26,13 @@
     }
     .post-meta span {
         margin-right: 15px;
+        display: inline-block; 
+    }
+    
+    .post-date {
+        display: block;
+        margin-top: 10px; 
+        color: #8a8a8a;
     }
     .post-content {
         font-size: 1.15rem;
@@ -48,8 +55,10 @@
     <div class="post-meta">
         <span><i class="fas fa-user"></i> <strong>Author:</strong> {{ post.author }}</span>
         <span><i class="fas fa-tag"></i> <strong>Category:</strong> <span class="badge-category">{{ post.category }}</span></span>
-        <br>
-        <span><i class="fas fa-calendar"></i> <strong>Created:</strong> {{ post.created_at|date:"M d, Y, g:i a" }}</span>
+        
+        <span class="post-date">
+            <i class="fas fa-calendar"></i> <strong>Created:</strong> {{ post.created_at|date:"M d, Y, g:i a" }}
+        </span>
     </div>
 
     <div class="post-content">
