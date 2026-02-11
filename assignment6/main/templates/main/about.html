@@ -1,8 +1,69 @@
 {% extends 'main/base.html' %}
+
 {% block title %}About Us{% endblock %}
+
 {% block content %}
+<style>
+    .about-card {
+        background: #f8f9fa;
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        max-width: 800px;
+        margin: 40px auto;
+        text-align: center;
+        border-top: 5px solid #007bff;
+    }
+    .about-card h2 {
+        color: #333;
+        margin-bottom: 25px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .authors-box {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+    }
+    .instructor-text {
+        color: #555;
+        font-size: 1.1em;
+        margin-top: 15px;
+    }
+    .date-text {
+        font-size: 0.9em;
+        color: #888;
+        margin-top: 30px;
+    }
+    .btn-custom {
+        margin-top: 20px;
+        padding: 10px 25px;
+        transition: 0.3s;
+    }
+</style>
+
+<div class="about-card">
     <h2>About Our Blog</h2>
-    <p>This project was created as part of Assignment 8.</p>
-    <p>Current date: {% now "jS F Y" %}</p>
-    <a href="{% url 'post_list' %}">Back to Posts</a>
+    
+    <p style="font-size: 1.2em; color: #28a745;">
+        <strong>The information was updated for final project.</strong>
+    </p>
+
+    <div class="authors-box">
+        <p>Done by <strong>Dinmukhammed Kulbekov</strong> and <strong>Alinur Yerlanuly</strong></p>
+        <p>Group: <strong>CS-2401</strong></p>
+    </div>
+
+    <p class="instructor-text">
+        Instructor: <strong>Nazym Turysbek</strong>
+    </p>
+
+    <p class="date-text">
+        <em>Current date: {% now "jS F Y" %}</em>
+    </p>
+    
+    <a href="{% url 'post_list' %}" class="btn btn-primary btn-custom">Back to Posts</a>
+</div>
 {% endblock %}

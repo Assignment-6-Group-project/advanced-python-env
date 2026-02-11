@@ -15,7 +15,7 @@ def process_json():
         students = json.load(f)
 
     for s in students:
-        s["average"] = sum(s["grades"]) / len(s["grades"])
+        s["average"] = round(sum(s["grades"]) / len(s["grades"]))
 
     with open("students_updated.json", "w", encoding="utf-8") as f:
         json.dump(students, f, indent=4)

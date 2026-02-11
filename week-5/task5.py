@@ -22,5 +22,5 @@ class BankAccount:
 if __name__ == "__main__":
     acc = BankAccount("Alice", 500)
     acc.deposit(200)
-    acc.withdraw(100)
+    acc.withdraw(800)
     print(acc.get_balance())
